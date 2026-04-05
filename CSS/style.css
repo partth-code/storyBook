@@ -1,0 +1,382 @@
+@font-face {
+    font-family: 'TangerineBold';
+    src: url("../FONTS/tangerine.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Tangerine';
+    src: url("../FONTS/tangerinebold.ttf") format("truetype");
+    
+}
+
+
+
+:root{
+    --x:0px;
+    --y:0px;
+    --r:0px;
+    --header-height:50px;}
+
+@media (max-width:600px){
+    :root{
+        --header-height: 30px;
+    }
+
+}
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+   
+    
+}
+
+body{
+    overflow-y: auto;
+    background-image: url("../IMAGES/backgroundNight.png");
+}
+
+
+
+
+.container{
+    position: relative;
+    width: 100%;
+   
+    background-color: rgb(12, 255, 255);
+}
+
+
+/*------------------------------------------------------------------*/
+/*Fairy Tale Layer*/
+.topLayer{
+    position: absolute;
+    
+    top: 0px;
+    left: 0px;
+    
+    display: block;
+
+ 
+    
+
+    width: 100%;
+    height: auto;
+  
+
+    background-color: red;
+    z-index: 1;
+
+    mask-image: radial-gradient(circle at var(--x) var(--y),
+                transparent var(--r),
+                black calc(var(--r) + 30px)); 
+
+    transition: mask-image 0.3s linear;
+
+} 
+
+.topLayer.mask-off{
+    mask-image: none;
+}
+
+
+.topLayer.no-interaction{
+    pointer-events: none;
+}
+.topLayer header{
+    position: sticky;
+    top: 0px;
+
+    flex-shrink: 0;
+    z-index: 3;
+}
+
+
+
+.topLayer  nav{  
+    position: relative;
+
+
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(2px);
+ 
+    font-family: TangerineBold;
+
+    border-bottom: 2px solid black;
+    
+}
+
+
+.topLayer .navBackground{
+    position: relative;
+      background: linear-gradient(rgba(238, 209, 25, 0.571),rgba(0, 0, 0, 0.269)), url("../IMAGES/brickMoss.jpg") ;
+      z-index: 1;
+
+}
+
+.topLayer  nav h1{
+    font-size: var(--header-height);
+    color: white;
+
+    text-shadow: 0px 0px 5px rgb(0, 0, 0),
+                 0px 0px 10px white;
+    
+    
+}
+
+button{
+    position: fixed;
+    color: red;
+    border: none;
+    background: none;
+    z-index: 30;
+
+}
+
+button img{
+    transition: transform 0.3s ease;
+}
+
+button:hover img{
+
+    transform: scale(1.2);
+
+}
+
+
+.topLayer  button img{
+    height: 100px;
+    border-radius: 50px;
+}
+
+.topLayer #crawler{
+    width: 500px;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    
+}
+
+#sunrop{
+    position: fixed;
+    top:10px;
+    right: 10px;
+    height: 80px;
+
+    animation: breathe 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+
+.topLayer main{
+    position: relative;
+
+    min-height: 100vh;
+    background-image: url("../IMAGES/fairyTale.jpg");
+    background-repeat: repeat-y;
+    background-position: center;
+    
+   
+    flex: 1;
+    
+
+}
+
+
+.topLayer main .cover{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(77, 77, 77, 0.233);
+    backdrop-filter: blur(0px);
+    color:rebeccapurple
+    
+}
+
+.topLayer main .page{
+    margin: 50px;
+    padding: 30px;
+    width: 70%;
+
+
+
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.454);
+    border-radius: 20px;
+
+    
+    font-family: "Tangerine";
+    font-size: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+.bottomLayer{
+    position: absolute;
+    
+    display: block;
+   
+ 
+    top: 0px;
+    left: 0px;
+    
+
+    width: 100%;
+    min-height: 100vh;
+  
+
+    background-color: rgb(0, 157, 254);
+    z-index: 0;
+
+} 
+
+
+.bottomLayer header{
+    position: sticky;
+    top: 0px;
+
+    flex-shrink: 0;
+    z-index: 3;
+}
+
+
+
+.bottomLayer  nav{  
+    position: relative;
+
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(2px);
+ 
+    font-family: TangerineBold;
+
+    border-bottom: 2px solid black;
+    z-index: 16;
+
+   
+
+}
+
+.bottomLayer .navBackground{
+      background: linear-gradient(rgba(151, 9, 245, 0.571),rgba(0, 0, 0, 0.269)), url("../IMAGES/brickMoss.jpg") ;
+
+}
+
+
+.bottomLayer  nav h1{
+    font-size: var(--header-height);
+    color: rgb(255, 244, 161);
+
+    text-shadow: 0px 0px 5px rgb(0, 0, 0),
+                 0px 0px 6px  black;
+    
+    
+}
+
+.bottomLayer  button img{
+    height: 100px;
+    border-radius: 50px;
+}
+
+.bottomLayer #crawler{
+    width: 0%;
+    position: absolute;
+    z-index: 7;
+    
+    top: 20px;
+    
+}
+
+#moonrop{
+    position: fixed;
+    top:10px;
+    right: 10px;
+    height: 80px;
+    z-index: 30;
+
+    animation: breathe 3s ease-in-out infinite;
+    transform-origin: center ;
+}
+
+
+
+
+.bottomLayer main{
+    position: relative;
+
+    min-height: 100vh;
+    background-image: url("../IMAGES/backgroundNight.png");
+    background-repeat: repeat-y;
+    background-position: center;
+    
+    flex: 1;
+ 
+
+}
+
+
+.bottomLayer main .cover{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(77, 77, 77, 0.233);
+    backdrop-filter: blur(0px);
+    color:rgb(246, 197, 20)
+    
+}
+
+
+.bottomLayer main .page{
+    margin: 50px;
+    padding: 30px;
+    width: 70%;
+
+
+
+    backdrop-filter: blur(20px);
+    background:  rgba(194, 122, 232, 0.447);
+    border-radius: 20px;
+
+    font-family: "Tangerine";
+    font-size: 25px;
+
+}
+
+
+@keyframes breathe {
+    0%{
+        transform: scale(1) rotate(0deg);
+    }
+    50%{
+        transform: scale(1.1) rotate(2deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
+    
+}
+
+
+
+
+
